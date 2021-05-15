@@ -1,9 +1,6 @@
 ﻿using DSharpPlus;
 using DSharpPlus.CommandsNext;
-using DSharpPlus.EventArgs;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
