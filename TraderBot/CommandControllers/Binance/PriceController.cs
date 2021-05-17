@@ -19,6 +19,9 @@ namespace TraderBot.CommandControllers.Binance
             request.AddParameter("symbol", symbol.ToUpper());
             var response = Client.Get(request);
 
+            if(response.Content.Contains("Invalid symbol"))
+                await ctx.Channel.SendMessageAsync($"Invalid symbol - {symbol}").ConfigureAwait(false);
+
             var embed = MessageBuilder.FormatPriceMessage(
                 JsonConvert.DeserializeObject<Binance24HourPriceResponse>(response.Content), symbol, exchange);
            
